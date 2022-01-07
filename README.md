@@ -2,7 +2,7 @@
 
 Before we begin, a couple of notes:
 
-**[Source](https://github.com/europa502/Installing-Nvidia-drivers-on-Kali-Linux)**
+**[Orginal source, but for Kali](https://github.com/europa502/Installing-Nvidia-drivers-on-Kali-Linux)**
 
 ***USE AT YOUR OWN RISK***
 
