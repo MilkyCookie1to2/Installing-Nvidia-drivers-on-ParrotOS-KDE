@@ -41,6 +41,7 @@ Enter command
 sudo init 3
 ```
 Enter password
+
 Then again enter your login and password
 
 Run installation
@@ -141,3 +142,30 @@ apt install -y ocl-icd-libopencl1 nvidia-driver hashcat-nvidia
 ```
 
 **Step 10:** Now that our system should be ready to go, we need to verify the drivers have been loaded correctly. We can quickly verify this by running the nvidia-smi tool.
+
+```
+root@milk:~# nvidia-smi
+Fri Jan  7 18:45:44 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.94       Driver Version: 470.94       CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:01:00.0 Off |                  N/A |
+| N/A   44C    P8     3W /  N/A |    151MiB /  3911MiB |      3%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A       893      G   /usr/lib/xorg/Xorg                 83MiB |
+|    0   N/A  N/A      1288      G   /usr/bin/kwin_x11                  31MiB |
+|    0   N/A  N/A      1346      G   /usr/bin/plasmashell               33MiB |
++-----------------------------------------------------------------------------+
+```
+***HAPPY END FOR RAIK199X***
