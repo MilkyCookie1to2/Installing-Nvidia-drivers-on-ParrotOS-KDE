@@ -1,0 +1,1 @@
+# Installing-Nvidia-drivers-on-ParrotOS-KDE
