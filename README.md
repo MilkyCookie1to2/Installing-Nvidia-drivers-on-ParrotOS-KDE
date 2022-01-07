@@ -110,7 +110,7 @@ X-KDE-Autostart-Phase=DisplayServer
 
 **2.** Create script with any name and location and following content:
 
-```
+```bash
 #!/bin/bash
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
