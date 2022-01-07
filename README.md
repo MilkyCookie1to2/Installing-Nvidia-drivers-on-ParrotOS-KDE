@@ -95,7 +95,9 @@ EndSection
 
 **REPLACE** the string inside ** ** with your Bus ID and save it to /etc/X11/xorg.conf
 
-**Step 7:** Now we have to create some scripts according to our display manager. Since i'm using ParrotOS KDE which is LightDM, first i created file: /etc/xdg/autostart/optimus.desktop with the following content:
+**Step 7:** Now we have to create some scripts according to our display manager. Since i'm using ParrotOS KDE which is LightDM: 
+
+**1.** Create file: /etc/xdg/autostart/optimus.desktop with the following content:
 
 ```
 [Desktop Entry]
@@ -106,3 +108,36 @@ NoDisplay=true
 X-KDE-Autostart-Phase=DisplayServer
 ```
 
+**2.** Create script with any name and location and following content:
+
+```
+#!/bin/bash
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+```
+
+**3.** Edit **/etc/lightdm/lightdm.conf**, remove **#** before **display-setup-script=** and append path to script
+```
+...
+display-setup-script=<path to script>
+...
+```
+
+**Step 8:** Now reboot and you should be using Nvidia Driver. Verify if everything is ok: install mesa-utils if not previously installed.
+
+```
+apt-get install mesa-utils
+```
+
+```
+root@milk:~# glxinfo | grep -i "direct rendering"
+direct rendering: Yes
+```
+
+**Step 9:** Now you can install the cuda toolkits and drivers. The package nvidia-cuda-toolkit has been deprecated. You can install hashcat-nvidia package as an alternative.
+
+```
+apt install -y ocl-icd-libopencl1 nvidia-driver hashcat-nvidia
+```
+
+**Step 10:** Now that our system should be ready to go, we need to verify the drivers have been loaded correctly. We can quickly verify this by running the nvidia-smi tool.
