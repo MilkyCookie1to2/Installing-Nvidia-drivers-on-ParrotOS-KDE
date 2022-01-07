@@ -11,8 +11,7 @@ Before we begin, a couple of notes:
 **Step 1:** Verify you have hybrid graphics
 
 ```
-┌──(root💀milk)-[~]
-└─# lspci | grep -E "VGA|3D"
+root@milk:~# lspci | grep -E "VGA|3D"
 01:00.0 VGA compatible controller: NVIDIA Corporation TU117M [GeForce GTX 1650 Mobile / Max-Q] (rev a1)
 05:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Picasso (rev c1)
 ```
