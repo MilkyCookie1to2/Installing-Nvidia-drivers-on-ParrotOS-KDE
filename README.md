@@ -17,14 +17,14 @@ root@milk:~# lspci | grep -E "VGA|3D"
 ```
 **Step 2:** Disable nouveau
 
-```
+```bash
 echo -e "blacklist nouveau\noptions nouveau modeset=0\nalias nouveau off" > /etc/modprobe.d/blacklist-nouveau.conf
 update-initramfs -u && reboot
 ```
 
 **Step 3:** System will reboot and nouveau should be disabled. Verify if nouveau is disabled:
 
-```
+```bash
 lsmod | grep -i nouveau
 ```
 If shows nothing,means nouveau successfully disabled.
@@ -37,19 +37,19 @@ After downloading press **Ctrl+Alt+F3**
 Enter your login and password
 
 Enter command
-```
+```bash
 sudo init 3
 ```
 Enter password
 Then again enter your login and password
 
 Run installation
-```
+```bash
 sudo sh ./NVIDIA-Linux-x86_64-470.94.run
 ```
 **Step 5:** Now we have to find bus id of our nvidia card:
 
-```
+```bash
 nvidia-xconfig --query-gpu-info | grep 'BusID : ' | cut -d ' ' -f6
 ```
 
@@ -117,7 +117,7 @@ xrandr --auto
 ```
 
 **3.** Edit **/etc/lightdm/lightdm.conf**, remove **#** before **display-setup-script=** and append path to script
-```
+```bash
 ...
 display-setup-script=<path to script>
 ...
@@ -129,14 +129,14 @@ display-setup-script=<path to script>
 apt-get install mesa-utils
 ```
 
-```
+```bash
 root@milk:~# glxinfo | grep -i "direct rendering"
 direct rendering: Yes
 ```
 
 **Step 9:** Now you can install the cuda toolkits and drivers. The package nvidia-cuda-toolkit has been deprecated. You can install hashcat-nvidia package as an alternative.
 
-```
+```bash
 apt install -y ocl-icd-libopencl1 nvidia-driver hashcat-nvidia
 ```
 
