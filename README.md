@@ -2,6 +2,8 @@
 
 Before we begin, a couple of notes:
 
+**[Source](https://github.com/europa502/Installing-Nvidia-drivers-on-Kali-Linux)**
+
 ***USE AT YOUR OWN RISK***
 
 **This tutorial is for official NVIDIA Driver**
@@ -9,8 +11,7 @@ Before we begin, a couple of notes:
 **Step 1:** Verify you have hybrid graphics
 
 ```
-bash
-  root@europa:~# lspci | grep -E "VGA|3D"
-  00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620 (rev 07)
-  01:00.0 3D controller: NVIDIA Corporation GP108M [GeForce MX150] (rev a1)
+root@europa:~# lspci | grep -E "VGA|3D"
+00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620 (rev 07)
+01:00.0 3D controller: NVIDIA Corporation GP108M [GeForce MX150] (rev a1)
 ```
