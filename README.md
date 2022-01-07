@@ -116,6 +116,11 @@ X-KDE-Autostart-Phase=DisplayServer
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 ```
+And set script executable permission
+
+```bash
+chmod +x <scriptname>
+```
 
 **3.** Edit **/etc/lightdm/lightdm.conf**, remove **#** before **display-setup-script=** and append path to script
 ```bash
